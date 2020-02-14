@@ -18,10 +18,11 @@ def add_student(name, student_id):
     students.append(student)
 
 
-def save_file(student):
+def save_file(name, sid):
     try:
+        stu = {name, sid }
         f = open("students.txt", "a")
-        f.write(student + "\n")
+        f.write(str(stu) + "\n")
         f.close()
         pass
     except Exception:
@@ -33,7 +34,8 @@ def read_file():
     try:
         f = open("students.txt", "r")
         for student in f.readlines():
-            add_student(student)
+            strin = student.split(",")
+            add_student(strin[0], strin[1])
         f.close()
     except Exception:
         print("Could not read file.")
@@ -43,14 +45,17 @@ def read_file():
 quit_loop = True
 
 while quit_loop:
+    read_file()
+    print_students_titlecase()
+
     student_list = get_students_titlecase()
 
     student_name = input("Enter Student Name: ")
     student_id = int(input("And their ID: "))
     add_student(student_name, student_id)
+    save_file(name=student_name, sid=student_id)
 
     if input("Do you want to add more students? ").upper() != "Y":
         quit_loop = False
     pass
 
-print_students_titlecase()
