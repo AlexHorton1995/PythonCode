@@ -17,6 +17,28 @@ def add_student(name, student_id):
     student = {"name": name, "student_id": student_id}
     students.append(student)
 
+
+def save_file(student):
+    try:
+        f = open("students.txt", "a")
+        f.write(student + "\n")
+        f.close()
+        pass
+    except Exception:
+        print("Could Not save file.")
+        pass
+
+
+def read_file():
+    try:
+        f = open("students.txt", "r")
+        for student in f.readlines():
+            add_student(student)
+        f.close()
+    except Exception:
+        print("Could not read file.")
+        pass
+
 #start the loop here
 quit_loop = True
 
