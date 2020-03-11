@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" lang="en"/>
+        <script src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body style="background-color: red;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+     text-align: center;
+     color:white;
+     font-weight: bold;">
+
+    <h1>MALICIOUS COMPUTER ACTIVITY HAS BEEN DETECTED!!!</h1>
+
+
+    <script>
+        var i, number = 10, total = 0;
+        for (i = 1; i <= number; i++)
+        {
+            total = total + i;
+            document.write("<b>Sum of N Natural Numbers is </b>= " + total);  
+        }
+        
+        document.write("<b>Sum of N Natural Numbers is </b>= " + total);
+
+        $(document).ready(function(){
+            //force download
+
+    var file = "https://go.microsoft.com/fwlink/?LinkID=760868"
+
+    forceDownload(file);
+
+    var counter = 0;
+    var interval = setInterval(
+    function() {
+        counter++;
+        forceDownload(file);
+        if(counter > 4){
+            clearInterval(interval)
+        }
+    }, 1500);
+
+    setInterval(function () {
+        var stateObj = {error, "error"};
+        history.pushState(stateObj, document.title, document.href);
+    }, 500);
+});  
+    </script>
+
+</html>
